@@ -3,7 +3,7 @@
 
 struct OSL_DmxDecoderFields
 {
-    /* == OSL V0.1.0 == */
+    /* == OSL V0.0.1 == */
 
     // The raw DMX channel being requested
     uint dmx_channel;
