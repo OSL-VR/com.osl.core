@@ -14,7 +14,7 @@ Shader "OSL/Processors/GlobalTimer (CRT)"
 
         Pass
         {
-            Name "GlobalTimer"
+            Name "OSL/GlobalTimer"
             CGPROGRAM
             #pragma target 5.0
             #pragma vertex vert
