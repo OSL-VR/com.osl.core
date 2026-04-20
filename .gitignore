@@ -1,0 +1,10 @@
+
+# Ignore all by default
+/*
+
+!.gitignore
+!./*.meta
+
+!Runtime/
+!./LICENSE
+!./package.json

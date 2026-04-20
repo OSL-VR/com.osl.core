@@ -11,6 +11,13 @@
     #define OSL_sampleMasterBusPixel(POS) OSL_MasterBusTex.Load(uint3((POS).xy, 0))
 #endif //OSL_SURFACE_SHADER
 
+uint4 OSL_decodeTrackRaw4xU8(uint v)
+{
+    uint4 cells = v.xxxx;
+    cells.yzw >>= uint3(8,16,24);
+    return cells & 0xFF;
+}
+
 float4 OSL_decodeTrack4xU8(uint v)
 {
     uint4 cells = v.xxxx;

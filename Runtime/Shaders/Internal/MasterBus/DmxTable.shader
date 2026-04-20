@@ -24,6 +24,7 @@ Shader "OSL/Processors/DmxTable (CRT)"
             #pragma vertex vert
             #pragma fragment frag
             #include "Packages/com.osl.core/Runtime/Shaders/Internal/Common/CRTStandard2D.cginc"
+            #include "Packages/com.osl.core/Runtime/Shaders/Internal/Connectors/Fields.cginc"
             #include "Packages/com.osl.core/Runtime/Shaders/Internal/Connectors/DmxDecoders.hlsl"
             #include "Links.cginc"
 
@@ -42,7 +43,7 @@ Shader "OSL/Processors/DmxTable (CRT)"
                 OSL_DmxDecoderFields fields;
 
                 fields.dmx_channel = channel;
-                fields.mb_size = 32u;
+                fields.mb_size = 16u;
                 fields.stream = _StreamTex;
                 fields.stream_st = _StreamTex_ST;
                 fields.stream_texelsize = _StreamTex_TexelSize;
@@ -57,7 +58,7 @@ Shader "OSL/Processors/DmxTable (CRT)"
                 crt_v2f _v2f = crt_vert(CRT_VID);
 
                 o.vertex = _v2f.vertex;
-                o.uv = _v2f.crt_uv.xy * float2(32.0, 32.0);
+                o.uv = _v2f.crt_uv.xy * float2(16.0, 16.0);
 
                 return o;
             }
